@@ -6,20 +6,20 @@
 	}
 
 	table tr td {
-		padding: 5px;
+		padding: 15px;
 		vertical-align: top;
 	}
 
 	.list_image {
-		width: 60px;
-		height: 70px;
+		width: 90px;
+		height: 80px;
 	}
 
 	.list_description {
-		width: 60%;
+		width: 70%;
 
 		dl {
-		margin: 0;
+		margin: 10;
 		}
 		dt {
 			color:		#244;
@@ -32,13 +32,13 @@
 	}
 
 	.list_actions {
-		font-size	: x-small;
+		font-size	: small;
 		text-align	: right;
 		padding-left: lem;
 	}
 
 	.list_line_even {
-		background: #e0f8f8;
+		background: #e0f0f8;
 	}
 
 	.list_line_odd {
