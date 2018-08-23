@@ -1,15 +1,19 @@
 <p id="notice"> <%= notice %> </p>
-<h1>Your Pragmatic Catalog</h1>
+<h1>Your Anime Catalog</h1>
 
-<% @products.each do |product| %>
-	<div class="entry">
-		<%= image_tag(product.image_url) %>
-		<h3> <%= product.title %> </h3>
-		<div class="description_line">
-			<span class="description"><%= product.description %></span>
+<% cache @products do %>
+	<% @products.each do |product| %>
+	<% cache product do %>
+		<div class="entry">
+			<%= image_tag(product.image_url) %>
+			<h3> <%= product.title %> </h3>
+			<div class="description_line">
+				<span class="description"><%= product.description %></span>
+			</div>
+			<div class="price_line">
+				<span class="price"><%= number_to_currency(product.price) %></span>			
+			</div>
 		</div>
-		<div class="price_line">
-			<span class="price"><%= product.price %></span>			
-		</div>
-	</div>
+		<% end %>
+	<% end %>
 <% end %>
