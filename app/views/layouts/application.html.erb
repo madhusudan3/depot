@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Anime Books Online</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <title>Anime Books Online Store</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
+    <%= csrf_meta_tags %>
   </head>
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= 'The Great Anime Books Shelf' %>
+      <%= 'The Great Anime Bookshelf' %>
       <span class="title"> <%= @page_title %></span>      
     </div>
 
     <div id="columns">
       <div id="side">
+        <div id="cart">
+          <% if @cart %>
+            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>
+          <% end %>
+          <% end %>
+        </div>
+
         <ul>
           <li><a href="http://localhost:3000">Home</a></li>
           <li><a href="http://localhost:3000/products">Products</a></li>
