@@ -7,13 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    
+
   </head>
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
       <%= 'The Great Anime Bookshelf' %>
-      <span class="title"> <%= @page_title %></span>      
+      <span class="title"> <%= @page_title %></span>
     </div>
 
     <div id="columns">
@@ -27,6 +27,7 @@
         </div>
         <ul>
           <li><a href="http://localhost:3000">Home</a></li>
+          <li><a href="http://localhost:3000/users">Sign In</a></li>
           <li><a href="http://localhost:3000/carts">Carts</a></li>
           <li><a href="http://localhost:3000/orders">Orders</a></li>
           <li><a href="http://localhost:3000/line_items">Line Items</a></li>
