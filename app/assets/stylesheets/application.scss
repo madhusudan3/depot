@@ -34,6 +34,11 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 	}
 }
 
+.locale {
+	float: right;
+	margin: -o.25em 0.1em;
+}
+
 #notice {
 	color: #000 !important;
 	border: 2px solid red;

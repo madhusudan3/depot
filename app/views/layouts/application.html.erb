@@ -12,7 +12,13 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= 'The Great Anime Bookshelf' %>
+      <%= form_tag store_index_path, class: 'locale' do %>
+            <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s),
+                onchange: 'this.form.submit()' %>
+            <%= submit_tag 'submit' %>
+            <%= javascript_tag "$('.locale input').hide()" %>
+      <% end %>
+      <%= t('.title') %>
       <span class="title"> <%= @page_title %></span>
     </div>
 
@@ -26,14 +32,15 @@
           <% end %>
         </div>
         <ul>
-          <li><a href="http://localhost:3000">Home</a></li>
-          <li><a href="http://localhost:3000/login">Log In</a></li>
-          <li><a href="http://localhost:3000/admin">Admin</a></li>
-          <li><a href="http://localhost:3000/users">Users</a></li>
-          <li><a href="http://localhost:3000/carts">Carts</a></li>
-          <li><a href="http://localhost:3000/orders">Orders</a></li>
-          <li><a href="http://localhost:3000/line_items">Line Items</a></li>
-          <li><a href="http://localhost:3000/products">Products</a></li>
+          <li><a href="http://localhost:3000"><%= t('.home') %></a></li>
+          <li><a href="http://www......./faq"><%= t('.questions') %></a></li>
+          <li><a href="http://localhost:3000/login"><%= t('.login') %></a></li>
+          <li><a href="http://localhost:3000/admin"><%= t('.admin') %></a></li>
+          <li><a href="http://localhost:3000/users"><%= t('.users') %></a></li>
+          <li><a href="http://localhost:3000/carts"><%= t('.carts') %></a></li>
+          <li><a href="http://localhost:3000/orders"><%= t('.orders') %></a></li>
+          <li><a href="http://localhost:3000/line_items"><%= t('.line_items') %></a></li>
+          <li><a href="http://localhost:3000/products"><%= t('.products') %></a></li>
         </ul>
 
         <% if session[:user_id] %>

@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  skip_before_action :authorize, only: :create
+  skip_before_action :set_i18n_locale_from_params, only: :create
 
   include CurrentCart
   before_action :set_cart, only: [:create]

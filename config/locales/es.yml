@@ -1,0 +1,35 @@
+es:
+  layouts:
+    application:
+      title:      "Los Estupendo Anime Estante para libros"
+      home:       "casa"
+      questions:  "preguntas"
+      news:       "Noticias"
+      contact:    "contacto"
+      login:      "niciar sesi&ntilde;n"
+      admin:      "administraci&ntilde;n"
+      users:      "usuarios"
+      carts:      "carros"
+      orders:     "pedidos"
+      line_items: "l&itilde;nea art&itilde;culos"
+      products:   "productos"
+
+  store:
+    index:
+      title_html:   "Tu Anime Catalogar"
+      add_html:     "A&dtilde;adir a Carro"
+
+  carts:
+    cart:
+      title:      "Su carrito"
+      checkout:   "Revisa"
+      empty:      "Carro vac&itilde;o"
+
+  number:
+    currency:
+      format:
+        unit:       "$US"
+        precision:  2
+        separator:  ","
+        delimiter:  "."
+        format:     "%n&nbsp;%u"
