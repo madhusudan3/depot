@@ -1,8 +1,8 @@
 class Order < ApplicationRecord
 	has_many :line_items, dependent: :destroy
 	enum pay_type: {
-		"Check"				=> 0,
-		"Credit Card"		=> 1,
+		"Check"						=> 0,
+		"Credit Card"			=> 1,
 		"Purchase Order" 	=> 2
 	}
 	validates :name, :address, :email, presence: true
@@ -11,7 +11,7 @@ class Order < ApplicationRecord
 	def add_line_items_from_cart(cart)
 		cart.line_items.each do |item|
 			item.cart_id = nil
-			line_items << item			
+			line_items << item
 		end
 	end
 end

@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  skip_before_action :set_i18n_locale_from_params, only: :create
+
   include CurrentCart
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
