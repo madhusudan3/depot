@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  skip_before_action :set_i18n_locale_from_params, only: [:new, :create]
+  skip_before_action :authorize, only: [:new, :create]
 
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         session[:order_id] = @order.id
         OrderMailer.received(@order).deliver_later
-        format.html { redirect_to store_index_url, notice: 'Thank you for your Order.' }
+        format.html { redirect_to store_index_url, notice: I18n.t('.thanks') }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

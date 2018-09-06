@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :set_i18n_locale_from_params
+  skip_before_action :authorize
 
   def new
   end
