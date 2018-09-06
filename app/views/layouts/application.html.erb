@@ -6,7 +6,12 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <script type="text/text/javascript">
+      I18n.defaultLocale  = "<%= I18n.default_locale %>";
+      I18n.locale         = "<%= I18n.locale %>";
+    </script>
 
   </head>
 
@@ -33,6 +38,7 @@
         </div>
         <ul>
           <li><a href="http://localhost:3000"><%= t('.home') %></a></li>
+          <li><a href="http://www......."><%= t('.home') %></a></li>
           <li><a href="http://www......./faq"><%= t('.questions') %></a></li>
           <li><a href="http://localhost:3000/login"><%= t('.login') %></a></li>
           <li><a href="http://localhost:3000/admin"><%= t('.admin') %></a></li>

@@ -16,4 +16,7 @@
 //= required jquery-ui/effect-blind
 //= required jquery_ujs
 //= require turbolinks
+
+//= require i18n
+//= require i18n/translations
 //= require_tree .
